@@ -2,7 +2,10 @@ package com.syaaa.springboot.vo;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.annotation.Validated;
 
 import java.util.Date;
 import java.util.List;
@@ -16,10 +19,23 @@ import java.util.Map;
  *
  * 只有这个组件是容器中的组件，才能容器提供的@ConfigurationProperties功能；
  *  @ConfigurationProperties(prefix = "person")默认从全局配置文件中获取值；
+ *@Validated 增加验证的注解
+ *
+ *
+ *
+ * Springboot2.0测试自定义配置文件，需要同时使用
+ *
+ * @ConfigurationProperties
+ * @PropertySource
+ * 两个注解
+ *
+ *
  *
  */
+@PropertySource(value = {"classpath:person.properties"})
 @Component
 @ConfigurationProperties(prefix = "person")
+
 public class Person {
 
 
