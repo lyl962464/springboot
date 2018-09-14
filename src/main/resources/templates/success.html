@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf常用标签练习界面</title>
+</head>
+<body>
+
+    <div>
+        <h1 th:text="${hello}"></h1>
+        <h1>[[${hello}]]</h1>
+    </div>
+    <hr>
+    <div>
+        <h1 th:utext="${hello}"></h1>
+        <h1>[(${hello})]</h1>
+    </div>
+    <hr>
+
+    <!--th:each每次遍历都会生成这个标签-->
+
+        <h4 th:text="${user}" th:each=" user:${users}"></h4>
+        <h4 th:each="user:${users}">[[${user}]]</h4>
+    <hr>
+        <h4>
+            <span th:each=" user:${users}">
+                [[${user}]]
+            </span>
+        </h4>
+
+
+
+
+</body>
+</html>
