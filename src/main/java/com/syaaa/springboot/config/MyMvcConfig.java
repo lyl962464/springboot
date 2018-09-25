@@ -50,7 +50,9 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
                 /*指定拦截的路径，并排除不需要拦截的路径*/
-               registry.addInterceptor(new LoginHandlerInterrupter()).addPathPatterns("/**").excludePathPatterns("/index.html","index.htm","/user/login");
+//               registry.addInterceptor(new LoginHandlerInterrupter()).addPathPatterns("/**").excludePathPatterns("/index.html","index.htm","/user/login");
+
+
             }
         };
         return adapter;
